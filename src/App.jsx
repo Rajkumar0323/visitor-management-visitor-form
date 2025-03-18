@@ -13,7 +13,7 @@ function App() {
   const [ownerId, setOwnerId] = useState(null);
   const [submitted, setSubmitted] = useState(false);
 
-  const socket = useMemo(() => io("http://localhost:5000"), []);
+  const socket = useMemo(() => io("https://chat-backend-jqfr.onrender.com"), []);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -74,7 +74,7 @@ function App() {
     const visitorData = { ownerId, reason, capturedImage };
     try {
       const res = await axios.post(
-        "http://localhost:5000/visitor-entry",
+        "https://chat-backend-jqfr.onrender.com/visitor-entry",
         visitorData
       );
 
