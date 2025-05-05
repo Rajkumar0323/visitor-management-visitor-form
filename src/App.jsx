@@ -13,8 +13,11 @@ function App() {
   const [ownerId, setOwnerId] = useState(null);
   const [submitted, setSubmitted] = useState(false);
 
-  // const socket = useMemo(() => io("https://chat-backend-jqfr.onrender.com"), []);
-  const socket = useMemo(() => io("http://localhost:5000"), []);
+  const socket = useMemo(
+    () => io("https://chat-backend-jqfr.onrender.com"),
+    []
+  );
+  // const socket = useMemo(() => io("http://localhost:5000"), []);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
